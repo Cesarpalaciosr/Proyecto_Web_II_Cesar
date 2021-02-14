@@ -19,7 +19,7 @@ import java.sql.SQLException;
 /**
  * Servlet implementation class Register
  */
-@MultipartConfig
+@MultipartConfig()
 @WebServlet("/Register")
 public class Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -53,6 +53,7 @@ public class Register extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("application/json");
 		PrintWriter out = response.getWriter();
+		
 		String name = request.getParameter("name");
 		String age = request.getParameter("age");
 		String ci = request.getParameter("cedula");
@@ -60,11 +61,7 @@ public class Register extends HttpServlet {
 		String email = request.getParameter("email");
 		String pass = request.getParameter("pass");
 		System.out.println("nombre: "+name);
-		System.out.println("nombre: "+age);
-		System.out.println("nombre: "+ci);
-		System.out.println("nombre: "+username);
-		System.out.println("nombre: "+email);
-		System.out.println("nombre: "+pass);
+		System.out.println(pass);
 		String h = Hashing.hashPass(pass);
 		
 		
@@ -77,7 +74,6 @@ public class Register extends HttpServlet {
 			ps1.setString(3, ci);
 			ps1.setString(4, username);
 			ps1.setString(5, email);
-			//ps1.setBoolean(7, false);
 			ps1.setString(6, h);
 			ps1.execute();
 			out.println("{\"message\":\"Usuario creado satisfactoriamente\", \"status\": 200}");
