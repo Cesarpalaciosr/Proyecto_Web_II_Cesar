@@ -63,6 +63,7 @@ public class Register extends HttpServlet {
 		System.out.println("nombre: "+name);
 		System.out.println(pass);
 		String h = Hashing.hashPass(pass);
+		System.out.println(h);
 		
 		
 		try {
