@@ -7,7 +7,12 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   <artifactId>Proyecto_Web_II_Cesar</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+  <url>http://maven.apache.org</url>
   <name>Proyecto_Web_II_Cesar</name>
+  <properties>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+	<maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 	<dependency>
@@ -15,6 +20,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     	<artifactId>postgresql</artifactId>
     	<version>42.2.18</version>
 	</dependency>
+	<dependency>
+  		<groupId>org.apache.commons</groupId>
+  		<artifactId>commons-dbcp2</artifactId>
+  		<version>2.6.0</version>
+  	</dependency>
     <dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>javax.servlet-api</artifactId>
@@ -26,7 +36,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
+
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
                 <source>1.8</source>
@@ -47,13 +57,28 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin>
-			  <plugin>
+			  <plugin>        
+			   <groupId>org.apache.maven.plugins</groupId>
+			   <artifactId>maven-dependency-plugin</artifactId>
+			   <executions>	
+			   <execution>
+      				<phase>package</phase>
+      				<goals>
+      					<goal>copy</goal>
+      				</goals>
+      				<configuration>
+      					<artifactItems>
+      						<artifactItem>
 			  	<groupId>com.heroku.sdk</groupId>
 			  	<artifactId>heroku-maven-plugin</artifactId>
 			  	<version>0.5.1</version>
 			  	<configuration>
 			    	<appName>proyecto-1-web-ii</appName>
-			  	</configuration>
+			  	</configuration></artifactItem>
+      					</artifactItems>
+      				</configuration>
+      			</execution>
+      			</executions>
 			</plugin>
     </plugins>
   </build>
