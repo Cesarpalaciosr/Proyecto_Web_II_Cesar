@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import cp.controllers.ConnectionDB;
-import cp.helpers.Hashing;
+import cp.helpers.*;
+import cp.controllers.ControlUser;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,20 +55,32 @@ public class Register extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		String name = request.getParameter("name");
-		String age = request.getParameter("age");
-		String ci = request.getParameter("cedula");
+		int age = Integer.parseInt(request.getParameter("age"));
+		System.out.println(request.getParameter("cedula"));
+		 int ci = Integer.parseInt(request.getParameter("cedula"));
 		String username = request.getParameter("username");
 		String email = request.getParameter("email");
 		String pass = request.getParameter("pass");
 		System.out.println("nombre: "+name);
-		System.out.println(pass);
+		System.out.println(ci);
 		String h = Hashing.hashPass(pass);
 		System.out.println(h);
 		
+		ControlUser control = new ControlUser();
+		String registered = control.registerUser(name, age, ci, username, email, h);
+		if(registered.equals("registrado")) {
+		//	response.sendRedirect("./public/views/login.html");
+			//out.println("{\"message\":\"Usuario creado satisfactoriamente\", \"status\": 200}");
+			out.println("{\"success\":\"true\",\"msg\":\"Hola Mundo\",\"status\":\"200\"}");
+		} else {
+			//Cambiar Redireccionamiento
+			response.sendRedirect("#");
+		}
 		
+		/*
 		try {
 
-			Connection conexion = ConnectionDB.startConn();
+			//Connection conexion = ConnectionDB.startConn();
 			PreparedStatement ps1 = conexion.prepareStatement("INSERT INTO usuarios VALUES (?, ?, ?, ?, ?, ?)");
 			ps1.setString(1, name);
 			ps1.setString(2, age);
@@ -81,7 +93,7 @@ public class Register extends HttpServlet {
 			ps1.close();
 		 } catch (SQLException e) {
 			out.println("{\"message\":\"error\"}");	
-		 }
+		 }*/
 	}
 
 	

@@ -13,25 +13,25 @@
 	      <main class="register-container">
             <section class="form-container">
                 <h4>Registro de datos</h4>
-                <form id="register-form">
-                    <label class="form-label" for="name">Nombre:</label>
-                    <input class="form-input" type="text" placeholder="name" name="name">
-                    <label class="form-label" for="edad">Edad:</label>
-                    <input class="form-input" type="number" placeholder="edad" name="age">
-                    <label class="form-label" for="cedula">Cedula:</label>
-                    <input class="form-input" type="number" placeholder="Cedula" name="cedula">
-                    <label class="form-label" for="username" >Username:</label>
-                    <input class="form-input" type="text" placeholder="username" name="username">
-                    <label class="form-label" for="email">Correo:</label>
-                    <input class="form-input" type="email" placeholder="Example@gmail.com" name="email">
-                    <label class="form-label" for="pass">Contraseña:</label>
-                    <input class="form-input" type="password" placeholder="password" name="pass">
+                <form id="data-form">
+                    <label required class="form-label" for="name">Nombre:</label>
+                    <input required class="form-input" type="text" placeholder="name" name="name">
+                    <label required class="form-label" for="edad">Edad:</label>
+                    <input required class="form-input" type="number" placeholder="edad" name="age">
+                    <label required class="form-label" for="cedula">Cedula:</label>
+                    <input required class="form-input" type="number" placeholder="Cedula" name="cedula">
+                    <label required class="form-label" for="username" >Username:</label>
+                    <input required class="form-input" type="text" placeholder="username" name="username">
+                    <label required class="form-label" for="email">Correo:</label>
+                    <input required class="form-input" type="email" placeholder="Example@gmail.com" name="email">
+                    <label required class="form-label" for="pass">Contraseña:</label>
+                    <input required class="form-input" type="password" placeholder="password" name="pass">
                     <button class="button" id="register-button">REGISTRAR</button>
                 </form>
-                <span class="auth-text">Ya Tienes Cuenta <a class="auth-link" href="#">Ingresa</a></span>
+                <span class="auth-text"><a class="auth-link" href="./public/views/login.html">¿Ya tienes cuenta?</a></span>
             </section>
         </main>
         
-    <script src="./public/scripts/script.js"></script>
+    <script src="./public/scripts/register.js"></script>
 </body>
 </html>

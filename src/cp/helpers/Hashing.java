@@ -6,6 +6,9 @@ import java.security.NoSuchAlgorithmException;
 public class Hashing {
 	
 public static String hashPass(String pass) {
+	
+		PropertiesReader prop = new PropertiesReader();
+		
 		
 		try {
 			MessageDigest hash = MessageDigest.getInstance("MD5");
@@ -15,6 +18,8 @@ public static String hashPass(String pass) {
 			for(int i=0;i<b.length;i++) {
 				sb.append(Integer.toString((b[i] & 0xff)+0x100, 16).substring(1));
 			}
+			
+			sb.append(prop.getValue("secret"));	
 			return sb.toString();
 		} catch (NoSuchAlgorithmException e) {
 			// TODO Auto-generated catch block
