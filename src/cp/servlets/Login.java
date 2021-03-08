@@ -62,9 +62,9 @@ public class Login extends HttpServlet {
 			System.out.println("Access granted");
 			session.setAttribute("user", user);
 			out.println("{\"success\":\"true\",\"msg\":\"Hola Mundo\",\"status\":\"200\"}");//Cambiar redireccionamiento del javascript y quitar el del servidor
-			response.sendRedirect("./public/views/dashboard.html");
+			response.sendRedirect("./dashboard.html");
 		}else {
-			response.sendRedirect("http://localhost:8080/Amazon/public/views/errorLogin.html");
+			response.sendRedirect("#");
 			response.setStatus(404);
 		}
 	}
