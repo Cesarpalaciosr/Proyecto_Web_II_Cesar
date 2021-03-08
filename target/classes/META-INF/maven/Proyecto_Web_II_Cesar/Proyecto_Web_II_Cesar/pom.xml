@@ -5,7 +5,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   <groupId>Proyecto_Web_II_Cesar</groupId>
   <artifactId>Proyecto_Web_II_Cesar</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>war</packaging>
   <url>http://maven.apache.org</url>
   <name>Proyecto_Web_II_Cesar</name>
   <properties>
@@ -37,14 +36,6 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-war-plugin</artifactId>
-            <version>2.6</version>
-            <configuration>
-                <failOnMissingWebXml>false</failOnMissingWebXml>
-            </configuration>
-        </plugin>
 	    <plugin>
 	        <groupId>com.heroku.sdk</groupId>
 	        <artifactId>heroku-maven-plugin</artifactId>
@@ -57,6 +48,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           <release>15</release>
         </configuration>
       </plugin>
+      <plugin>
+    <artifactId>maven-war-plugin</artifactId>
+    <version>3.0.3</version>
+    <configuration>
+        <failOnMissingWebXml>true</failOnMissingWebXml>
+    </configuration>
+</plugin>
       <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-dependency-plugin</artifactId>
