@@ -1,12 +1,12 @@
-var registerForm = document.getElementById("data-form");
+var loginForm = document.getElementById("data-form");
 var API_url = window.location.origin+"/Proyecto_Web_II_Cesar/Login";
 
-registerForm.addEventListener("submit", send);
+loginForm.addEventListener("submit", send);
 
 async function send(e) {
   e.preventDefault();
   var data = {};
-  var form = new FormData(registerForm);
+  var form = new FormData(loginForm);
   for (var pair of form.entries()) {
     data[pair[0]] = pair[1];
   }

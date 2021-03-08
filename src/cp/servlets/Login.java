@@ -60,9 +60,10 @@ public class Login extends HttpServlet {
 		
 		if(accessed.equals("accessed")) {
 			System.out.println("Access granted");
-			session.setAttribute("user", user);
+			//response.sendRedirect("./dashboard.html");
 			out.println("{\"success\":\"true\",\"msg\":\"Hola Mundo\",\"status\":\"200\"}");//Cambiar redireccionamiento del javascript y quitar el del servidor
-			response.sendRedirect("./dashboard.html");
+			session.setAttribute("user", user);
+			System.out.println("Se le otrogo session al usuario");
 		}else {
 			response.sendRedirect("#");
 			response.setStatus(404);
