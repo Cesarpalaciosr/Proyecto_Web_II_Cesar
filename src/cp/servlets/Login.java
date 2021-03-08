@@ -1,12 +1,19 @@
 package cp.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import cp.controllers.ControlUser;
+import cp.helpers.Hashing;
+
 
 /**
  * Servlet implementation class Login
@@ -36,8 +43,30 @@ public class Login extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		response.addHeader("Access-Control-Allow-Origin", "*");
+		request.setCharacterEncoding("UTF-8");
+		response.setContentType("application/json");
+		PrintWriter out = response.getWriter();
+		
+		String user = request.getParameter("username");
+		String pass = request.getParameter("pass");
+		
+		String h = Hashing.hashPass(pass);		
+		ControlUser u = new ControlUser();
+		
+		String accessed = u.loginUser(user, h);
+		
+		HttpSession session = request.getSession(true);
+		
+		if(accessed.equals("accessed")) {
+			System.out.println("Access granted");
+			session.setAttribute("user", user);
+			out.println("{\"success\":\"true\",\"msg\":\"Hola Mundo\",\"status\":\"200\"}");//Cambiar redireccionamiento del javascript y quitar el del servidor
+			response.sendRedirect("./public/views/dashboard.html");
+		}else {
+			response.sendRedirect("http://localhost:8080/Amazon/public/views/errorLogin.html");
+			response.setStatus(404);
+		}
 	}
 
 }

@@ -31,7 +31,6 @@ public class Register extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -41,7 +40,6 @@ public class Register extends HttpServlet {
 		response.addHeader("Access-Control-Allow-Origin", "*");
 		PrintWriter out = response.getWriter();
 		out.print(" esto es la respuesta para el cliente");
-		
 	}
 
 	/**
@@ -76,37 +74,5 @@ public class Register extends HttpServlet {
 			//Cambiar Redireccionamiento
 			response.sendRedirect("#");
 		}
-		
-		/*
-		try {
-
-			//Connection conexion = ConnectionDB.startConn();
-			PreparedStatement ps1 = conexion.prepareStatement("INSERT INTO usuarios VALUES (?, ?, ?, ?, ?, ?)");
-			ps1.setString(1, name);
-			ps1.setString(2, age);
-			ps1.setString(3, ci);
-			ps1.setString(4, username);
-			ps1.setString(5, email);
-			ps1.setString(6, h);
-			ps1.execute();
-			out.println("{\"message\":\"Usuario creado satisfactoriamente\", \"status\": 200}");
-			ps1.close();
-		 } catch (SQLException e) {
-			out.println("{\"message\":\"error\"}");	
-		 }*/
-	}
-
-	
-	
-	@Override
-	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPut(req, resp);
-	}
-	
-	@Override
-	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doDelete(req, resp);
 	}
 }

@@ -3,6 +3,7 @@ package cp.controllers;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import cp.helpers.*;
@@ -36,5 +37,23 @@ public class ControlUser {
 		return query;
 	}
 	
+	public String loginUser(String user, String pass) throws IOException {
+		String query = prop.getValue("db.login.user");
+		try {
+			PreparedStatement pstmt = con.prepareStatement(query);
+			pstmt.setString(1, user);
+			pstmt.setString(2, pass);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				System.out.println("User successfully logged");
+				return "accessed";
+			} else {
+				System.out.println("Error");
+			} 
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return query;		
+	}
 	
 }
