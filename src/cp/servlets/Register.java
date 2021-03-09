@@ -40,6 +40,7 @@ public class Register extends HttpServlet {
 		response.addHeader("Access-Control-Allow-Origin", "*");
 		PrintWriter out = response.getWriter();
 		out.print(" esto es la respuesta para el cliente");
+		response.sendRedirect("./public/views/login.html");
 	}
 
 	/**
