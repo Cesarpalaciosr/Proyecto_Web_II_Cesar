@@ -62,10 +62,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
-            <version>3.2.2</version>
             <configuration>
+          <warSourceDirectory>WebContent</warSourceDirectory>
+ 			</configuration>
+            <version>3.2.2</version>
+          <!--  <configuration>
                 <failOnMissingWebXml>false</failOnMissingWebXml>
-            </configuration>
+            </configuration> --> 
         </plugin>
 	    <plugin>
 	        <groupId>com.heroku.sdk</groupId>
