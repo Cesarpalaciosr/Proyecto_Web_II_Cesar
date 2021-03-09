@@ -38,6 +38,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 		<version>3.0.1</version>
 		<scope>provided</scope>
 	</dependency>  
+	<!-- https://x-stream.github.io -->
 	  <dependency>
                 <groupId>com.thoughtworks.xstream</groupId>
                 <artifactId>xstream</artifactId>
