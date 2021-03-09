@@ -1,5 +1,6 @@
 var registerForm = document.getElementById("data-form");
-var API_url = window.location.origin+"./Register";
+//var API_url = window.location.origin+"/Register";
+var API_url = "https://proyecto-1-web-ii.herokuapp.com/Register"
 
 registerForm.addEventListener("submit", send);
 
