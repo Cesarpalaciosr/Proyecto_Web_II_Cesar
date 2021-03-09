@@ -30,7 +30,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	<dependency>
 			  <groupId>com.heroku</groupId>
 			  <artifactId>webapp-runner</artifactId>
-			  <version>9.0.41.0</version>
+			  <version>9.0.30.0</version>
 			  <scope>provided</scope>
 	</dependency>
     <dependency>
@@ -92,7 +92,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                           <artifactItem>
                               <groupId>com.github.heroku</groupId>
                               <artifactId>webapp-runner</artifactId>
-                              <version>9.0.41.0</version>
+                              <version>9.0.30.0</version>
                               <destFileName>webapp-runner.jar</destFileName>
                           </artifactItem>
                       </artifactItems>
