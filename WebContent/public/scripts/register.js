@@ -19,7 +19,7 @@ async function send(e) {
   var response = await res.json();
 
   if (response.status == 200) {
-    window.location = window.location.origin + "/Proyecto_Web_II_Cesar/public/views/login.html";
+    window.location = window.location.origin + "/public/views/login.html";
   } else {
     alert("No se pudo Registrar los datos");
   }
