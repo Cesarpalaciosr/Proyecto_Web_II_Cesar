@@ -10,10 +10,10 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   <name>Proyecto_Web_II_Cesar</name>
   <properties>
   <jdkVersion>15</jdkVersion>
-   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-  	<maven.compiler.source>1.8</maven.compiler.source>
-	<maven.compiler.target>1.8</maven.compiler.target>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  <maven.compiler.source>1.8</maven.compiler.source>
+  <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
@@ -48,7 +48,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   <exclusion>
                     <groupId>xpp3</groupId>
                     <artifactId>xpp3_min</artifactId>
-                  </exclusion>
+                   </exclusion>
                   <exclusion>
                     <groupId>xmlpull</groupId>
                     <artifactId>xmlpull</artifactId>
@@ -63,7 +63,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
             <configuration>
-          <warSourceDirectory>WebContent</warSourceDirectory>
+         		<warSourceDirectory>WebContent</warSourceDirectory>
  			</configuration>
             <version>3.2.2</version>
           <!--  <configuration>
