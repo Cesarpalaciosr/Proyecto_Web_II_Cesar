@@ -74,6 +74,7 @@ public class Register extends HttpServlet {
 		} else {
 			//Cambiar Redireccionamiento
 			response.sendRedirect("#");
+			out.println("error estoy en el else");
 		}
 	}
 }
