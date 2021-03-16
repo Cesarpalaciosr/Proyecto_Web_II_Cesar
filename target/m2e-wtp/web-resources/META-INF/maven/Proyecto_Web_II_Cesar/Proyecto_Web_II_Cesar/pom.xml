@@ -109,12 +109,12 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     <version>1.0.0</version> 
     <executions> 
         <execution> 
-            <phase>generate-resources</phase> 
+            <phase>initialize</phase> 
             <goals> 
-                <goal>write-project-properties</goal> 
+                <goal>read-project-properties</goal> 
             </goals> 
             <configuration> 
-                <outputFile>${project.build.outputDirectory}/resources/config.properties</outputFile>
+                <outputFile>${project.build.outputDirectory}src/main/resources/abc.properties</outputFile>
             </configuration> 
         </execution> 
     </executions> 
