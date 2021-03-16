@@ -114,7 +114,9 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 <goal>read-project-properties</goal> 
             </goals> 
             <configuration> 
-                <outputFile>${project.build.outputDirectory}/main/resources/config.properties</outputFile>
+            <files>
+                <file>resources/config.properties</file>
+              </files>
             </configuration> 
         </execution> 
     </executions> 
