@@ -62,7 +62,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     <resources>
             <!-- This way we instruct maven to inject values from filters into the resources -->
             <resource>
-                <directory>/resources/config.properties</directory>
+                <directory>resources/config.properties</directory>
                 <filtering>true</filtering>
             </resource>
     </resources>
@@ -121,7 +121,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 <goal>read-project-properties</goal> 
             </goals> 
             <configuration> 
-                <outputFile>${project.build.outputDirectory}/resources/config.properties</outputFile>
+                <outputFile>resources/config.properties</outputFile>
             </configuration> 
         </execution> 
     </executions> 
