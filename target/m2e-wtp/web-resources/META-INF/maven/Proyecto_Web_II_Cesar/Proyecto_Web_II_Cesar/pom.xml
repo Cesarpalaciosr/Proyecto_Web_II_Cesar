@@ -59,6 +59,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
+    <resources>
+            <!-- This way we instruct maven to inject values from filters into the resources -->
+            <resource>
+                <directory>/resources/config.properties</directory>
+                <filtering>true</filtering>
+            </resource>
+    </resources>
     <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
