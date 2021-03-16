@@ -14,7 +14,7 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding> 
   	<maven.compiler.source>1.8</maven.compiler.source>
   	<maven.compiler.target>1.8</maven.compiler.target>
-    <my.awesome.property>config.properties</my.awesome.property> 
+    <my.awesome.property>config</my.awesome.property> 
   </properties>
   <dependencies>
   <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
@@ -109,13 +109,13 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     <version>1.0.0</version> 
     <executions> 
         <execution> 
-            <phase>validate</phase> 
+            <phase>initialize</phase> 
             <goals> 
                 <goal>read-project-properties</goal> 
             </goals> 
             <configuration> 
             <files>
-                <file>resources/config.properties</file>
+                <file>${basedir}/resources/config.properties</file>
               </files>
             </configuration> 
         </execution> 
