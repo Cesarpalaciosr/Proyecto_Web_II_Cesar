@@ -10,6 +10,7 @@ public class PropertiesReader {
 		
 		public PropertiesReader() {
 			try (InputStream is = new FileInputStream(ClassLoader.getSystemResource("config.properties").getPath())) {
+				System.out.println(is);
 				prop.load(is);
 			} catch(Exception e) {
 				e.printStackTrace();
